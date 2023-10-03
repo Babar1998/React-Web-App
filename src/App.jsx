@@ -6,9 +6,14 @@ import './App.css'
 import './Components/Counter/Counter.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return <Counter/>
+  return <div>
+    <Counter/>
+    <Counter/>
+    <Counter/>
+    <Counter/>
+    <Counter/>
+    <Counter/>
+  </div>;
+  
 }
-
 export default App
