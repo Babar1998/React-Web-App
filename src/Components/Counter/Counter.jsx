@@ -9,8 +9,8 @@ const Counter = ()=> {
     };
 
     const inputChangeHandler = (e) => {
-        const inputValue = Number(e.target.value);
-        setInputValue(inputValue);
+        const inputVal = Number(e.target.value);
+        setInputValue(inputVal);
     };
     return (
         <div>
