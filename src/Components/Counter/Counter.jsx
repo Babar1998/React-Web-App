@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Counter.css";
 
-const Counter = ()=> {
+const Counter = (props)=> {
     const [counterValue, setCounterValue] = useState(0);
     const [inputValue, setInputValue] = useState(0);
     const incrementClickHandler = () => {
@@ -12,10 +12,14 @@ const Counter = ()=> {
         const inputVal = Number(e.target.value);
         setInputValue(inputVal);
     };
+
+    useEffect(() => {
+        console.log("useEffect");
+    }, [])
+    
     return (
         <div>
-            <h1>Counter</h1>
-            <h2>{counterValue}</h2>
+            <h2>{props.name} Counter: {counterValue}</h2>
             <input onChange = {inputChangeHandler} type = "text"/>
             <button onClick={incrementClickHandler}>Increment</button>
         </div>

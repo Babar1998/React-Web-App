@@ -7,12 +7,10 @@ import './Components/Counter/Counter.css'
 
 function App() {
   return <div>
-    <Counter/>
-    <Counter/>
-    <Counter/>
-    <Counter/>
-    <Counter/>
-    <Counter/>
+    <Counter name = "Babar's"/>
+    <Counter name = "Rizwan's"/>
+    <Counter name = "Harris's"/>
+    <Counter name = "Rauf's"/>
   </div>;
   
 }
