@@ -8,6 +8,10 @@ const Counter = (props)=> {
         setCounterValue(counterValue + inputValue);
     };
 
+    const decrementClickHandler = () => {
+        setCounterValue(counterValue - inputValue);
+    };
+
     const inputChangeHandler = (e) => {
         const inputVal = Number(e.target.value);
         setInputValue(inputVal);
@@ -19,9 +23,15 @@ const Counter = (props)=> {
     
     return (
         <div>
-            <h2>{props.name} Counter: {counterValue}</h2>
+            {/* <h2>Item: {props.item}</h2> */}
+            {/* <h2>Item: {props.price}</h2> */}
+            {/* <h2>Counter: {counterValue}</h2> */}
+            <h2>Item: {props.title}</h2>
+            <h2>Price: {props.price} </h2>
+            <h2>Quantity: {counterValue}</h2>
             <input onChange = {inputChangeHandler} type = "text"/>
             <button onClick={incrementClickHandler}>Increment</button>
+            <button onClick={decrementClickHandler}>Decrement</button>
         </div>
     );
 };

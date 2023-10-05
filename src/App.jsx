@@ -1,17 +1,42 @@
-import Counter from './Components/Counter/Counter'
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import './Components/Counter/Counter.css'
+import Counter from "./Components/Counter/Counter";
+import { useState } from "react";
+import "./App.css";
+import "./Components/Counter/Counter.css";
 
 function App() {
-  return <div>
-    <Counter name = "Babar's"/>
-    <Counter name = "Rizwan's"/>
-    <Counter name = "Harris's"/>
-    <Counter name = "Rauf's"/>
-  </div>;
-  
+  const [counterName, setCounterName] = useState("");
+  const [countePrice, setCounterPrice] = useState("");
+  const [itemArr, setItemArr] = useState([]);
+  return (
+    <div>
+      <input
+        onChange={(e) => {
+          setCounterName(e.target.value);
+        }}
+        type="text"
+      />
+      <input
+        onChange={(e) => {
+          setCounterPrice(e.target.value);
+        }}
+        type="text"
+      />
+      <button
+        onClick={() => {
+          const newItemArr = [
+            { title: counterName, price: countePrice },
+            ...itemArr,
+          ];
+          setItemArr(newItemArr);
+          console.log(newItemArr);
+        }}
+      >
+        Create Counter
+      </button>
+      {itemArr.map((item) => {
+        return <Counter title={item.title} price={item.price} />;
+      })}
+    </div>
+  );
 }
-export default App
+export default App;
