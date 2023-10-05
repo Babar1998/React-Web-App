@@ -13,8 +13,8 @@ const Counter = (props)=> {
     };
 
     const inputChangeHandler = (e) => {
-        const inputVal = Number(e.target.value);
-        setInputValue(inputVal);
+        
+        setInputValue(Number(e.target.value));
     };
 
     useEffect(() => {
@@ -36,4 +36,4 @@ const Counter = (props)=> {
     );
 };
 
-export default Counter;
+export { Counter };

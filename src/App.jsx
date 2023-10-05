@@ -1,11 +1,11 @@
-import Counter from "./Components/Counter/Counter";
+import {Counter} from "./Components/Counter/Counter";
 import { useState } from "react";
 import "./App.css";
 import "./Components/Counter/Counter.css";
 
 function App() {
   const [counterName, setCounterName] = useState("");
-  const [countePrice, setCounterPrice] = useState("");
+  const [counterPrice, setCounterPrice] = useState("");
   const [itemArr, setItemArr] = useState([]);
   return (
     <div>
@@ -24,17 +24,16 @@ function App() {
       <button
         onClick={() => {
           const newItemArr = [
-            { title: counterName, price: countePrice },
+            { title: counterName, price: counterPrice },
             ...itemArr,
           ];
           setItemArr(newItemArr);
-          console.log(newItemArr);
         }}
       >
         Create Counter
       </button>
-      {itemArr.map((item) => {
-        return <Counter title={item.title} price={item.price} />;
+      {itemArr.map((item, index) => {
+        return <Counter key = {index} title={item.title} price={item.price} />;
       })}
     </div>
   );
