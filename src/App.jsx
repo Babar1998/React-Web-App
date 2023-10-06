@@ -28,12 +28,13 @@ function App() {
             ...itemArr,
           ];
           setItemArr(newItemArr);
+          console.log(newItemArr);
         }}
       >
         Create Counter
       </button>
       {itemArr.map((item, index) => {
-        return <Counter key = {index} title={item.title} price={item.price} />;
+        return <Counter key = {index} index = {index} title={item.title} price={item.price} setItemArr = {setItemArr}/>;
       })}
     </div>
   );
